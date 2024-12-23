@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Pesquisa de Qualidade de Atendimento</title>
     <style>
         body {
@@ -14,7 +15,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 20px auto;
             background: #fff;
             padding: 20px;
@@ -43,10 +44,12 @@
             margin-bottom: 5px;
         }
 
+    
+
         input[type="text"],
         input[type="number"],
         textarea {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -91,6 +94,12 @@
         button:hover {
             background: #a50000;
         }
+        .form-group input {
+        width: 95%;  /* Define a largura do campo para 50% do tamanho do elemento pai */
+        padding: 8px; /* Define o preenchimento interno do campo */
+        font-size: 14px; /* Ajusta o tamanho da fonte dentro do campo */
+        }
+
     </style>
 </head>
 
@@ -98,22 +107,23 @@
 <div class="container">
         <h1>Pesquisa de Qualidade de Atendimento</h1>
         <form action="processar_pesquisa.php" method="post">
+            <fieldset>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required>
+                <input type="text" name="nome" id="nome" required maxlength="100px">
             </div>
             <div class="form-group">
                 <label for="cpf">CPF:</label>
                 <input type="text" name="cpf" id="cpf" pattern="\d{11}" required>
             </div>
-
+            </fieldset>
             <!-- Agilidade no Atendimento -->
             <h2>Agilidade no Atendimento</h2>
             <div class="form-group rating-options">
                 <div>
-                    <input type="radio" name="agilidade" value="Péssimo" id="agilidade-pessimo">
+                    <input type="radio" name="agilidade" value="Pessimo" id="agilidade-pessimo">
                     <label for="agilidade-pessimo">
-                        <img src="img/pessimo.jpg" alt="Péssimo"><br>Péssimo
+                        <img src="img/pessimo.jpg" alt="Pessimo"><br>Péssimo
                     </label>
                 </div>
                 <div>
@@ -129,8 +139,8 @@
                     </label>
                 </div>
                 <div>
-                    <input type="radio" name="agilidade" value="Otimo" id="agilidade-otima">
-                    <label for="agilidade-otima">
+                <input type="radio" name="agilidade" value="Otimo" id="agilidade-otimo">
+                    <label for="agilidade-otimo">
                         <img src="img/otimo.jpg" alt="Otimo"><br>Ótimo
                     </label>
                 </div>
@@ -146,9 +156,9 @@
             <h2>Cordialidade</h2>
             <div class="form-group rating-options">
                 <div>
-                    <input type="radio" name="cordialidade" value="Péssimo" id="cordialidade-pessimo">
+                    <input type="radio" name="cordialidade" value="Pessimo" id="cordialidade-pessimo">
                     <label for="cordialidade-pessimo">
-                        <img src="img/pessimo.jpg" alt="Péssimo"><br>Péssimo
+                        <img src="img/pessimo.jpg" alt="Pessimo"><br>Péssimo
                     </label>
                 </div>
                 <div>
@@ -181,7 +191,7 @@
             <h2>Qualidade no Serviço</h2>
             <div class="form-group rating-options">
                 <div>
-                    <input type="radio" name="qualidade" value="Péssimo" id="qualidade-pessimo">
+                    <input type="radio" name="qualidade" value="Pessimo" id="qualidade-pessimo">
                     <label for="qualidade-pessimo">
                         <img src="img/pessimo.jpg" alt="Péssimo"><br>Péssimo
                     </label>
@@ -216,9 +226,9 @@
             <h2>Ambiente Físico</h2>
             <div class="form-group rating-options">
                 <div>
-                    <input type="radio" name="ambiente" value="Péssimo" id="ambiente-pessimo">
+                    <input type="radio" name="ambiente" value="Pessimo" id="ambiente-pessimo">
                     <label for="ambiente-pessimo">
-                        <img src="img/pessimo.jpg" alt="Péssimo"><br>Péssimo
+                        <img src="img/pessimo.jpg" alt="Pessimo"><br>Péssimo
                     </label>
                 </div>
                 <div>

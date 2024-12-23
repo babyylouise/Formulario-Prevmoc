@@ -5,12 +5,30 @@ $dbname = 'pesquisa';
 $user = 'root'; 
 $password = ''; 
 
-
-
 try {
     // Conexão com o banco de dados (charset utf8mb4 para suportar caracteres especiais)
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $password);
+    $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Criar o banco de dados caso não exista
+    $pdo->exec("CREATE DATABASE IF NOT EXISTS $dbname");
+    
+    // Conectar ao banco de dados específico
+    $pdo->exec("USE $dbname");
+
+    // Criar a tabela caso não exista
+    $createTableSQL = "
+    CREATE TABLE IF NOT EXISTS respostas (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nome VARCHAR(100) NOT NULL,
+        cpf VARCHAR(15) NOT NULL,
+        agilidade VARCHAR(10) NOT NULL,
+        cordialidade VARCHAR(10) NOT NULL,
+        qualidade VARCHAR(10) NOT NULL,
+        ambiente VARCHAR(10) NOT NULL,
+        opiniao TEXT
+    )";
+    $pdo->exec($createTableSQL);
 
     // Recuperando os dados do formulário
     $nome = isset($_POST['nome']) ? trim($_POST['nome']) : null;
@@ -21,8 +39,6 @@ try {
     $ambiente = isset($_POST['ambiente']) ? $_POST['ambiente'] : null;
     $opiniao = isset($_POST['opiniao']) ? trim($_POST['opiniao']) : null;
 
-    // Debug: Verificar se os valores estão corretos
-   
 
     // Verificar se os campos obrigatórios foram preenchidos
     if (!$nome || !$cpf || !$agilidade || !$cordialidade || !$qualidade || !$ambiente) {
@@ -33,10 +49,7 @@ try {
     // Inserir os dados no banco de dados
     $sql = "INSERT INTO respostas (nome, cpf, agilidade, cordialidade, qualidade, ambiente, opiniao) 
             VALUES (:nome, :cpf, :agilidade, :cordialidade, :qualidade, :ambiente, :opiniao)";
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
- 
+
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':cpf', $cpf);
