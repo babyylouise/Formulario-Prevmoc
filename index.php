@@ -7,12 +7,56 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Pesquisa de Qualidade de Atendimento</title>
+
 </head>
+<style>
+    /* Define tamanhos fixos para as imagens */
+    label img{
+        cursor: pointer;
+        width: 100px;
+        /* Largura fixa */
+        height: 100px;
+        /* Altura fixa */
+        transition: transform 0.1s, box-shadow 0.1s;
+        box-sizing: border-box;
+        /* Inclui bordas no tamanho do elemento */
+    }
+
+    /* Efeito de hover */
+    label img:hover {
+        transform: scale(1.1);
+        /* Aumenta levemente a imagem ao passar o mouse */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        /* Sombra ao passar o mouse */
+        border-radius: 15px;
+    }
+
+    /* Efeito ao selecionar a imagem */
+    input[type="radio"]:checked+label img {
+        outline: 3px solid #007bff;
+        /* Usar outline para não mudar o tamanho do elemento */
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        /* Destaque visual */
+        border-radius: 15px;
+    }
+
+    .card-header {
+        background-color: rgb(42, 62, 84);
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+    .btn-custom{
+        background-color: rgb(42, 62, 84);
+      
+    }
+</style>
 
 <body class="bg-light">
     <div class="container mt-5">
         <div class="card shadow">
-            <div class="card-header text-center bg-primary text-white">
+            <div class="card-header text-center text-white">
                 <h1>Pesquisa de Qualidade de Atendimento</h1>
             </div>
             <div class="card-body">
@@ -29,148 +73,182 @@
 
                     <!-- Seções de Avaliação -->
                     <div class="form-group">
-                        <h2 class="mt-4">Agilidade no Atendimento</h2>
+                        <h2 class="mt-5 mb-5">Agilidade no Atendimento</h2>
                         <div class="d-flex justify-content-between">
                             <div class="text-center">
-                                <input type="radio" name="agilidade" value="Pessimo" id="agilidade-pessimo">
+                                <input type="radio" name="agilidade" value="Pessimo" id="agilidade-pessimo"
+                                    class="d-none">
                                 <label for="agilidade-pessimo">
-                                    <img src="img/pessimo.jpg" alt="Péssimo" class="img-fluid"><br>Péssimo
+                                    <img src="img/pessimo.png" alt="Pessimo" class="img-fluid">
+                                    <div class="mt-2">Péssimo</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="agilidade" value="Ruim" id="agilidade-ruim">
+                                <input type="radio" name="agilidade" value="Ruim" id="agilidade-ruim" class="d-none">
                                 <label for="agilidade-ruim">
-                                    <img src="img/ruim.jpg" alt="Ruim" class="img-fluid"><br>Ruim
+                                    <img src="img/ruim.png" alt="Ruim" class="img-fluid">
+                                    <div class="mt-2">Ruim</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="agilidade" value="Regular" id="agilidade-regular">
+                                <input type="radio" name="agilidade" value="Regular" id="agilidade-regular"
+                                    class="d-none">
                                 <label for="agilidade-regular">
-                                    <img src="img/regular.jpg" alt="Regular" class="img-fluid"><br>Regular
+                                    <img src="img/regular.png" alt="Regular" class="img-fluid">
+                                    <div class="mt-2">Regular</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="agilidade" value="Otimo" id="agilidade-otimo">
+                                <input type="radio" name="agilidade" value="Otimo" id="agilidade-otimo" class="d-none">
                                 <label for="agilidade-otimo">
-                                    <img src="img/otimo.jpg" alt="Ótimo" class="img-fluid"><br>Ótimo
+                                    <img src="img/otimo.png" alt="Ótimo" class="img-fluid">
+                                    <div class="mt-2">Ótimo</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="agilidade" value="Excelente" id="agilidade-excelente">
+                                <input type="radio" name="agilidade" value="Excelente" id="agilidade-excelente"
+                                    class="d-none">
                                 <label for="agilidade-excelente">
-                                    <img src="img/excelente.jpg" alt="Excelente" class="img-fluid"><br>Excelente
+                                    <img src="img/excelente.png" alt="Excelente" class="img-fluid">
+                                    <div class="mt-2">Excelente</div>
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <h2 class="mt-4">Cordialidade</h2>
+                        <h2 class="mt-4 mb-4">Cordialidade</h2>
                         <div class="d-flex justify-content-between">
                             <div class="text-center">
-                                <input type="radio" name="cordialidade" value="Pessimo" id="cordialidade-pessimo">
+                                <input type="radio" name="cordialidade" value="Pessimo" id="cordialidade-pessimo"
+                                    class="d-none">
                                 <label for="cordialidade-pessimo">
-                                    <img src="img/pessimo.jpg" alt="Pessimo" class="img-fluid"><br>Péssimo
+                                    <img src="img/pessimo.png" alt="Pessimo" class="img-fluid">
+                                    <div class="mt-2">Péssimo</div>
                                 </label>
                             </div>
 
                             <div class="text-center">
-                                <input type="radio" name="cordialidade" value="Ruim" id="cordialidade-ruim">
+                                <input type="radio" name="cordialidade" value="Ruim" id="cordialidade-ruim"
+                                    class="d-none">
                                 <label for="cordialidade-ruim">
-                                    <img src="img/ruim.jpg" alt="Ruim" class="img-fluid"><br>Ruim
+                                    <img src="img/ruim.png" alt="Ruim" class="img-fluid">
+                                    <div class="mt-2">Ruim</div>
+
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="cordialidade" value="Regular" id="cordialidade-regular">
+                                <input type="radio" name="cordialidade" value="Regular" id="cordialidade-regular"
+                                    class="d-none">
                                 <label for="cordialidade-regular">
-                                    <img src="img/regular.jpg" alt="Regular" class="img-fluid"><br>Regular
+                                    <img src="img/regular.png" alt="Regular" class="img-fluid">
+                                    <div class="mt-2">Regular</div>
                                 </label>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <input type="radio" name="cordialidade" value="Otimo" id="cordialidade-otimo">
+                                <input type="radio" name="cordialidade" value="Otimo" id="cordialidade-otimo"
+                                    class="d-none">
                                 <label for="cordialidade-otimo">
-                                    <img src="img/otimo.jpg" alt="Otimo" class="img-fluid"><br>Ótimo
+                                    <img src="img/otimo.png" alt="Otimo" class="img-fluid">
+                                    <div class="mt-2">Ótimo</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="cordialidade" value="Excelente" id="cordialidade-excelente">
+                                <input type="radio" name="cordialidade" value="Excelente" id="cordialidade-excelente"
+                                    class="d-none">
                                 <label for="cordialidade-excelente">
-                                    <img src="img/excelente.jpg" alt="Excelente" class="img-fluid"><br>Excelente
+                                    <img src="img/excelente.png" alt="Excelente" class="img-fluid">
+                                    <div class="mt-2">Excelente</div>
                                 </label>
                             </div>
                         </div>
+                    </div>
+                    <!-- Qualidade no Serviço -->
 
-                        <!-- Qualidade no Serviço -->
+                    <div class="form-group">
+                        <h2 class="mt-5 mb-4">Qualidade no Serviço</h2>
+                        <div class="d-flex justify-content-between">
+                            <div class="text-center">
+                                <input type="radio" name="qualidade" value="Pessimo" id="qualidade-pessimo"
+                                    class="d-none">
+                                <label for="qualidade-pessimo">
+                                    <img src="img/pessimo.png" alt="Pessimo" class="img-fluid">
+                                    <div class="mt-2">Péssimo</div>
+                                </label>
+                            </div>
 
-                        <div class="form-group">
-                            <h2 class="mt-4">Qualidade no Serviço</h2>
-                            <div class="d-flex justify-content-between">
-                                <div class="form-group">
-                                    <input type="radio" name="qualidade" value="Pessimo" id="qualidade-pessimo">
-                                    <label for="qualidade-pessimo">
-                                        <img src="img/pessimo.jpg" alt="Péssimo" class="img-fluid"><br>Péssimo
-                                    </label>
-                                </div>
-
-                                <div class="text-center">
-                                    <input type="radio" name="qualidade" value="Ruim" id="qualidade-ruim">
-                                    <label for="qualidade-ruim">
-                                        <img src="img/ruim.jpg" alt="Ruim"><br>Ruim
-                                    </label>
-                                </div>
-                                <div class="text-center">
-                                    <input type="radio" name="qualidade" value="Regular" id="qualidade-regular">
-                                    <label for="qualidade-regular">
-                                        <img src="img/regular.jpg" alt="Regular"><br>Regular
-                                    </label>
-                                </div>
-                                <div class="text-center">
-                                    <input type="radio" name="qualidade" value="Otimo" id="qualidade-otimo">
-                                    <label for="qualidade-otimo">
-                                        <img src="img/otimo.jpg" alt="Otimo"><br>Ótimo
-                                    </label>
-                                </div>
-                                <div class="text-center">
-                                    <input type="radio" name="qualidade" value="Excelente" id="qualidade-excelente">
-                                    <label for="qualidade-excelente">
-                                        <img src="img/excelente.jpg" alt="Excelente"><br>Excelente
-                                    </label>
-                                </div>
+                            <div class="text-center">
+                                <input type="radio" name="qualidade" value="Ruim" id="qualidade-ruim" class="d-none">
+                                <label for="qualidade-ruim">
+                                    <img src="img/ruim.png" alt="Ruim" class="img-fuid">
+                                    <div class="mt-2">Ruim</div>
+                                </label>
+                            </div>
+                            <div class="text-center">
+                                <input type="radio" name="qualidade" value="Regular" id="qualidade-regular"
+                                    class="d-none">
+                                <label for="qualidade-regular">
+                                    <img src="img/regular.png" alt="Regular" class="img-fluid">
+                                    <div class="mt-2">Regular</div>
+                                </label>
+                            </div>
+                            <div class="text-center">
+                                <input type="radio" name="qualidade" value="Otimo" id="qualidade-otimo" class="d-none">
+                                <label for="qualidade-otimo">
+                                    <img src="img/otimo.png" alt="Otimo" class="img-fluid">
+                                    <div class="mt-2">Ótimo</div>
+                                </label>
+                            </div>
+                            <div class="text-center">
+                                <input type="radio" name="qualidade" value="Excelente" id="qualidade-excelente"
+                                    class="d-none">
+                                <label for="qualidade-excelente">
+                                    <img src="img/excelente.png" alt="Excelente" class="img-fluid">
+                                    <div class="mt-2">Excelente</div>
+                                </label>
                             </div>
                         </div>
                     </div>
 
                     <!-- Ambiente Físico -->
                     <div class="form-group">
-                        <h2 class="mt-4">Ambiente Físico</h2>
+                        <h2 class="mt-5 mb-4">Ambiente Físico</h2>
                         <div class="d-flex justify-content-between">
                             <div class="text-center">
-                                <input type="radio" name="ambiente" value="Pessimo" id="ambiente-pessimo">
+                                <input type="radio" name="ambiente" value="Pessimo" id="ambiente-pessimo"
+                                    class="d-none">
                                 <label for="ambiente-pessimo">
-                                    <img src="img/pessimo.jpg" alt="Pessimo" class="img-fluid"><br>Péssimo
+                                    <img src="img/pessimo.png" alt="Pessimo" class="img-fluid">
+                                    <div class="mt-2">Péssimo</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="ambiente" value="Ruim" id="ambiente-ruim">
+                                <input type="radio" name="ambiente" value="Ruim" id="ambiente-ruim" class="d-none">
                                 <label for="ambiente-ruim">
-                                    <img src="img/ruim.jpg" alt="Ruim" class="img-fluid"><br>Ruim
+                                    <img src="img/ruim.png" alt="Ruim" class="img-fluid">
+                                    <div class="mt-2">Ruim</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="ambiente" value="Regular" id="ambiente-regular">
+                                <input type="radio" name="ambiente" value="Regular" id="ambiente-regular"
+                                    class="d-none">
                                 <label for="ambiente-regular">
-                                    <img src="img/regular.jpg" alt="Regular" class="img-fluid"><br>Regular
+                                    <img src="img/regular.png" alt="Regular" class="img-fluid">
+                                    <div class="mt-2">Regular</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="ambiente" value="Otimo" id="ambiente-otimo">
+                                <input type="radio" name="ambiente" value="Otimo" id="ambiente-otimo" class="d-none">
                                 <label for="ambiente-otimo">
-                                    <img src="img/otimo.jpg" alt="Otimo" class="img-fluid"><br>Ótimo
+                                    <img src="img/otimo.png" alt="Otimo" class="img-fluid">
+                                    <div class="mt-2">Ótimo</div>
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input type="radio" name="ambiente" value="Excelente" id="ambiente-excelente">
+                                <input type="radio" name="ambiente" value="Excelente" id="ambiente-excelente"
+                                    class="d-none">
                                 <label for="ambiente-excelente">
-                                    <img src="img/excelente.jpg" alt="Excelente" class="img-fluid"><br>Excelente
+                                    <img src="img/excelente.png" alt="Excelente" class="img-fluid">
+                                    <div class="mt-2">Excelente</div>
                                 </label>
                             </div>
                         </div>
@@ -183,7 +261,7 @@
                     </div>
 
                     <!-- Botão de Envio -->
-                    <button type="submit" class="btn btn-primary btn-block mt-4">Terminei, Enviar Pesquisa</button>
+                    <button type="submit" class="btn btn-custom btn-block mt-4 text-white">Terminei, Enviar Pesquisa</button>
                 </form>
             </div>
         </div>
